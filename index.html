@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Buyon | Smile Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C5A059;
+            --black: #1A1A1A;
+            --white: #F9F9F9;
+            --gray: #f0f0f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--white); 
+            color: var(--black);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* HEADER FASHION */
+        header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1500');
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--white);
+        }
+
+        .hero-title { font-size: clamp(2.5rem, 8vw, 4.5rem); border-bottom: 3px solid var(--gold); display: inline-block; padding-bottom: 10px; }
+        .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; margin-top: 20px; }
+
+        /* SECCIÓN PERFIL DEL DOCTOR */
+        .doctor-profile {
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: #fff;
+        }
+        .doctor-img { flex: 1; position: relative; }
+        .doctor-img img { 
+            width: 100%; 
+            max-width: 450px;
+            border-radius: 5px; 
+            box-shadow: 25px 25px 0px var(--gold);
+            transition: 0.5s ease;
+            display: block;
+        }
+        .doctor-info { flex: 1.2; }
+        .doctor-info span { color: var(--gold); font-weight: 600; letter-spacing: 3px; font-size: 0.8rem; }
+        .doctor-info h2 { font-size: 3.5rem; margin: 15px 0; line-height: 1; }
+        .doctor-info p { font-style: italic; color: #555; line-height: 1.8; border-left: 3px solid var(--gold); padding-left: 20px; }
+
+        /* SERVICIOS */
+        .services {
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            background: var(--gray);
+        }
+        .service-card {
+            padding: 40px;
+            background: #fff;
+            border: 1px solid #eee;
+            transition: 0.5s ease;
+        }
+        .service-card:hover { background: var(--black); color: var(--white); transform: translateY(-10px); }
+        .service-card span { font-size: 0.8rem; color: var(--gold); font-weight: bold; }
+
+        /* ESTILOS DEL CARRUSEL (GALERÍA) */
+        .gallery { padding: 100px 10%; text-align: center; background: white; }
+        .carousel-container {
+            position: relative;
+            max-width: 900px;
+            margin: 50px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .comparison {
+            min-width: 100%;
+            position: relative;
+        }
+        .comparison img { width: 100%; height: 500px; object-fit: cover; display: block; }
+        .label {
+            position: absolute; bottom: 0; width: 100%;
+            display: flex; justify-content: space-around;
+            background: rgba(0,0,0,0.6); color: white; padding: 15px; font-weight: bold;
+        }
+        .prev, .next {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: var(--gold); color: white; border: none;
+            padding: 15px 20px; cursor: pointer; font-size: 24px;
+            border-radius: 50%; z-index: 10; transition: 0.3s;
+        }
+        .prev:hover, .next:hover { background: var(--black); }
+        .prev { left: 20px; }
+        .next { right: 20px; }
+
+        /* CONTACTO */
+        .contact { padding: 100px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; background: var(--black); color: #fff; }
+        .contact h2 { color: var(--gold); margin-bottom: 30px; font-size: 2.5rem; }
+        .contact-item { margin-bottom: 25px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .contact-item h4 { color: var(--gold); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+        .btn-booking {
+            display: inline-block; margin-top: 30px; padding: 18px 50px;
+            background: var(--gold); color: white; text-decoration: none;
+            font-weight: bold; letter-spacing: 3px; transition: 0.4s;
+        }
+        .btn-booking:hover { background: white; color: var(--black); }
+
+        @media (max-width: 768px) {
+            .doctor-profile, .contact { grid-template-columns: 1fr; flex-direction: column; text-align: center; }
+            .doctor-info p { border-left: none; border-top: 3px solid var(--gold); padding: 20px 0; }
+            .comparison img { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <p style="letter-spacing: 5px; color: var(--gold);">THE NEW ERA OF ESTHETICS</p>
+            <h1 class="hero-title">Carlos Buyon</h1>
+            <p class="hero-subtitle">Smile Architect & Aesthetic Designer</p>
+            <a href="#contacto" class="btn-booking">RESERVAR CITA</a>
+        </div>
+    </header>
+
+    <section class="doctor-profile">
+        <div class="doctor-img">
+            <img src="image/carlos-buyon.jpg" alt="Dr. Carlos Buyon">
+        </div>
+        <div class="doctor-info">
+            <span>THE EXPERT</span>
+            <h2>Dr. Carlos Buyon</h2>
+            <p>"La odontología estética es el equilibrio perfecto entre la ciencia y el arte. No solo transformamos dientes, devolvemos la seguridad para brillar en cada momento de la vida."</p>
+            <div style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); opacity: 0.4; margin-top: 20px;">C. Buyon</div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="service-card">
+            <span>01. RECONSTRUCCIÓN</span>
+            <h3>Diseño de Sonrisa Digital</h3>
+            <p>Tecnología 3D para proyectar tu sonrisa perfecta antes de empezar.</p>
+        </div>
+        <div class="service-card">
+            <span>02. ESTÉTICA</span>
+            <h3>Carillas de Porcelana Luxury</h3>
+            <p>Materiales de alta gama para un acabado natural y deslumbrante.</p>
+        </div>
+        <div class="service-card">
+            <span>03. SPA DENTAL</span>
+            <h3>Blanqueamiento Láser Pro</h3>
+            <p>Resultados inmediatos en un ambiente de total relajación.</p>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2>Editorial Results</h2>
+        <div class="carousel-container">
+            <div class="carousel-slide" id="slider">
+                <div class="comparison">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800" alt="Caso 1">
+                    <div class="label"><span>ANTES</span><span>DESPUÉS</span></div>
+                </div>
+                <div class="comparison">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800" alt="Caso 2">
+                    <div class="label"><span>ANTES</span><span>DESPUÉS</span></div>
+                </div>
+                <div class="comparison">
+                    <img src="https://images.unsplash.com/photo-1594539829535-de250c94a8b5?q=80&w=800" alt="Caso 3">
+                    <div class="label"><span>ANTES</span><span>DESPUÉS</span></div>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div>
+            <h2>Private Studio</h2>
+            <div class="contact-item">
+                <h4>Ubicación</h4>
+                <p>9119 S. Exchange Ave. Chicago, IL 60617</p>
+            </div>
+            <div class="contact-item">
+                <h4>Contacto Directo</h4>
+                <p>📞 773-768-5000</p>
+                <p>✉️ concierge@carlosbuyon.com</p>
+            </div>
+            <a href="#" class="btn-booking">WHATSAPP DIRECTO</a>
+        </div>
+        <div style="background: #222; height: 300px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--gold);">
+            <p style="color: var(--gold);">[ MAPA INTERACTIVO ]</p>
+        </div>
+    </section>
+
+    <footer style="background: #000; color: #444; padding: 30px; text-align: center; font-size: 0.8rem;">
+        <p>© 2026 CARLOS BUYON ARCHITECTS. PROYECTO CLUSTER DE PROCESAMIENTO.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('.comparison');
+        const totalSlides = slides.length;
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex >= totalSlides) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = totalSlides - 1;
+            
+            const offset = -currentIndex * 100;
+            slider.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Auto-reproducción cada 4 segundos
+        setInterval(() => moveSlide(1), 4000);
+    </script>
+
+</body>
+</html>
