@@ -89,7 +89,12 @@
     }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dztacjkrg/image/upload/f_auto,q_auto,w_1200/v1777001887/WhatsApp_Image_2026-04-23_at_10.28.15_PM_aprdyk.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
     <style>
         :root {
             --gold: #C5A059;
@@ -99,7 +104,7 @@
             --white: #faf8f5;
             --gray: #f4f2ef;
             --text: #2a2a2a;
-            --muted: #888;
+            --muted: #767676;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -110,6 +115,9 @@
             font-family: 'Jost', sans-serif;
             overflow-x: hidden;
         }
+        /* Fallback fonts mientras cargan las web fonts */
+        @font-face { font-family: 'Cormorant Garamond'; font-display: swap; src: local('Georgia'); }
+        @font-face { font-family: 'Jost'; font-display: swap; src: local('Arial'); }
 
         /* ── SCROLLBAR ── */
         ::-webkit-scrollbar { width: 4px; }
@@ -158,7 +166,7 @@
         }
         .hero-bg {
             position: absolute; inset: 0;
-            background: url('https://res.cloudinary.com/dztacjkrg/image/upload/v1777001887/WhatsApp_Image_2026-04-23_at_10.28.15_PM_aprdyk.jpg') center/cover;
+            background: url('https://res.cloudinary.com/dztacjkrg/image/upload/f_auto,q_auto,w_1200/v1777001887/WhatsApp_Image_2026-04-23_at_10.28.15_PM_aprdyk.jpg') center/cover;
             transform: scale(1.05);
             filter: brightness(0.25);
         }
@@ -549,7 +557,7 @@
         <a href="#resultados">Resultados</a>
         <a href="#contacto" class="nav-cta">Reservar Cita</a>
     </div>
-    <button class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Abrir menú de navegación">
         <span></span><span></span><span></span>
     </button>
 </nav>
@@ -574,19 +582,19 @@
 <!-- STATS -->
 <div class="stats-bar reveal">
     <div class="stat">
-        <div class="stat-num">500+</div>
+        <div class="stat-num" aria-label="Más de 500 sonrisas transformadas">500+</div>
         <div class="stat-label">Sonrisas transformadas</div>
     </div>
     <div class="stat">
-        <div class="stat-num">10+</div>
+        <div class="stat-num" aria-label="Más de 10 años de experiencia">10+</div>
         <div class="stat-label">Años de experiencia</div>
     </div>
     <div class="stat">
-        <div class="stat-num">98%</div>
+        <div class="stat-num" aria-label="98 por ciento de satisfacción">98%</div>
         <div class="stat-label">Satisfacción</div>
     </div>
     <div class="stat">
-        <div class="stat-num">3</div>
+        <div class="stat-num" aria-label="3 premios internacionales">3</div>
         <div class="stat-label">Premios internacionales</div>
     </div>
 </div>
@@ -594,7 +602,7 @@
 <!-- ABOUT -->
 <section id="sobre" class="about">
     <div class="about-img-wrap reveal">
-        <img src="https://res.cloudinary.com/dztacjkrg/image/upload/v1777003419/carlos-buyon_zxpuh1.jpg" alt="Dr. Carlos Buyon" class="about-img">
+        <img src="https://res.cloudinary.com/dztacjkrg/image/upload/f_auto,q_auto,w_700/v1777003419/carlos-buyon_zxpuh1.jpg" alt="Dr. Carlos Buyon - Odontólogo en San Fernando de Apure" class="about-img" width="700" height="800" loading="lazy">
         <div class="about-badge">Smile Architect</div>
     </div>
     <div class="reveal" style="animation-delay:0.2s">
@@ -655,14 +663,14 @@
     </div>
     <div class="carousel-wrap reveal">
         <div class="carousel-track" id="track">
-<div class="slide"><img src="https://res.cloudinary.com/dztacjkrg/image/upload/v1777001887/WhatsApp_Image_2026-04-23_at_10.28.16_PM_ck2mci.jpg" alt="Resultado 1"></div>
-<div class="slide"><img src="https://res.cloudinary.com/dztacjkrg/image/upload/v1777001886/WhatsApp_Image_2026-04-23_at_10.28.14_PM_1_bm36h7.jpg" alt="Resultado 1"></div>
-<div class="slide"><img src="https://res.cloudinary.com/dztacjkrg/image/upload/v1777001886/WhatsApp_Image_2026-04-23_at_10.28.14_PM_n1qxil.jpg" alt="Resultado 1"></div>
-<div class="slide"><img src="https://res.cloudinary.com/dztacjkrg/image/upload/v1777001886/WhatsApp_Image_2026-04-23_at_10.28.13_PM_lzxv2c.jpg" alt="Resultado 1"></div>
-<div class="slide"><img src="https://res.cloudinary.com/dztacjkrg/image/upload/v1777001886/WhatsApp_Image_2026-04-23_at_10.28.11_PM_qirgyh.jpg" alt="Resultado 1"></div>
+<div class="slide"><img src="https://res.cloudinary.com/dztacjkrg/image/upload/f_auto,q_auto,w_860/v1777001887/WhatsApp_Image_2026-04-23_at_10.28.16_PM_ck2mci.jpg" alt="Resultado de diseño de sonrisa 1" width="860" height="520" loading="eager"></div>
+<div class="slide"><img src="https://res.cloudinary.com/dztacjkrg/image/upload/f_auto,q_auto,w_860/v1777001886/WhatsApp_Image_2026-04-23_at_10.28.14_PM_1_bm36h7.jpg" alt="Resultado de diseño de sonrisa 2" width="860" height="520" loading="lazy"></div>
+<div class="slide"><img src="https://res.cloudinary.com/dztacjkrg/image/upload/f_auto,q_auto,w_860/v1777001886/WhatsApp_Image_2026-04-23_at_10.28.14_PM_n1qxil.jpg" alt="Resultado de diseño de sonrisa 3" width="860" height="520" loading="lazy"></div>
+<div class="slide"><img src="https://res.cloudinary.com/dztacjkrg/image/upload/f_auto,q_auto,w_860/v1777001886/WhatsApp_Image_2026-04-23_at_10.28.13_PM_lzxv2c.jpg" alt="Resultado de diseño de sonrisa 4" width="860" height="520" loading="lazy"></div>
+<div class="slide"><img src="https://res.cloudinary.com/dztacjkrg/image/upload/f_auto,q_auto,w_860/v1777001886/WhatsApp_Image_2026-04-23_at_10.28.11_PM_qirgyh.jpg" alt="Resultado de diseño de sonrisa 5" width="860" height="520" loading="lazy"></div>
         </div>
-        <button class="c-btn c-prev" onclick="move(-1)">&#8249;</button>
-        <button class="c-btn c-next" onclick="move(1)">&#8250;</button>
+        <button class="c-btn c-prev" onclick="move(-1)" aria-label="Imagen anterior">&#8249;</button>
+        <button class="c-btn c-next" onclick="move(1)" aria-label="Imagen siguiente">&#8250;</button>
         <div class="slide-counter" id="counter">1 / 7</div>
     </div>
     <div class="c-dots" id="dots"></div>
@@ -732,6 +740,12 @@
 window.addEventListener('scroll', function() {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
 });
+
+// ── PRELOAD HERO BG ──
+(function() {
+    var img = new Image();
+    img.src = 'https://res.cloudinary.com/dztacjkrg/image/upload/f_auto,q_auto,w_1200/v1777001887/WhatsApp_Image_2026-04-23_at_10.28.15_PM_aprdyk.jpg';
+})();
 
 // ── MOBILE MENU ──
 function toggleMobile() {
